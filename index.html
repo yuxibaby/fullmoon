@@ -3,29 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>陳宇莃・彌月紀念</title>
+<title>陳宇莃｜彌月小故事</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#f9f5ee;
-  --cream:#fffaf2;
-  --ink:#403833;
-  --muted:#a09283;
-  --line:#dfd4c6;
-  --deep:#7f6f61;
-  --shadow:0 24px 70px rgba(94,74,54,.12);
-  --container:1180px;
+  --paper:#fbf7ef;
+  --ink:#3f3832;
+  --muted:#8f8175;
+  --line:#d8cbbb;
+  --cream:#fffdf8;
+  --rose:#f3c8bd;
+  --blue:#c9dceb;
+  --yellow:#f5df9f;
+  --green:#cddfc7;
+  --shadow:0 18px 50px rgba(80,63,48,.12);
 }
 
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-  background:var(--bg);
-  color:var(--ink);
   font-family:'Noto Serif TC',serif;
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(255,255,255,.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.45) 1px, transparent 1px),
+    var(--paper);
+  background-size:38px 38px;
   overflow-x:hidden;
 }
 
@@ -35,15 +48,44 @@ body::before{
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(circle at 18% 12%, rgba(255,255,255,.8), transparent 26%),
-    radial-gradient(circle at 82% 18%, rgba(229,215,199,.5), transparent 30%),
-    radial-gradient(circle at 50% 90%, rgba(255,255,255,.55), transparent 36%);
+    radial-gradient(circle at 12% 15%, rgba(243,200,189,.45), transparent 18%),
+    radial-gradient(circle at 82% 20%, rgba(201,220,235,.45), transparent 20%),
+    radial-gradient(circle at 50% 90%, rgba(245,223,159,.35), transparent 26%);
   z-index:-1;
 }
 
+img{
+  width:100%;
+  display:block;
+}
+
+section{
+  padding:92px 22px;
+}
+
+.wrap{
+  max-width:1080px;
+  margin:auto;
+}
+
+/* 手繪裝飾 */
+.doodle{
+  position:fixed;
+  color:rgba(63,56,50,.18);
+  font-size:44px;
+  z-index:-1;
+  font-family:'Noto Sans TC',sans-serif;
+}
+
+.d1{top:10%;left:6%;}
+.d2{top:18%;right:8%;}
+.d3{bottom:12%;left:10%;}
+.d4{bottom:18%;right:12%;}
+
+/* 動畫 */
 .reveal{
   opacity:0;
-  transform:translateY(34px);
+  transform:translateY(28px);
   transition:1s ease;
 }
 
@@ -54,269 +96,341 @@ body::before{
 
 /* HERO */
 .hero{
-  max-width:var(--container);
   min-height:100vh;
-  margin:auto;
   display:grid;
-  grid-template-columns:1fr 1.15fr;
-  gap:56px;
-  align-items:center;
-  padding:72px 24px;
+  place-items:center;
+  text-align:center;
+  padding:70px 22px;
 }
 
-.kicker{
-  font-size:12px;
-  color:var(--muted);
-  letter-spacing:.35em;
-  margin-bottom:36px;
-}
-
-.kicker::before{
-  content:"";
-  display:inline-block;
-  width:38px;
-  height:1px;
-  background:var(--line);
-  margin-right:14px;
-  vertical-align:middle;
-}
-
-.hero h1{
-  font-size:clamp(74px,10vw,150px);
-  font-weight:400;
-  line-height:.95;
-  letter-spacing:.18em;
-  margin-bottom:30px;
-}
-
-.hero .en{
-  font-family:'Cormorant Garamond',serif;
-  font-size:26px;
-  font-style:italic;
-  color:var(--muted);
-  margin-bottom:34px;
-}
-
-.hero-info{
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-  color:var(--deep);
-  letter-spacing:.22em;
-  font-size:14px;
-}
-
-.hero-info span{
-  padding:12px 18px;
-  background:rgba(255,250,242,.72);
+.hero-book{
+  width:min(1000px,100%);
+  background:rgba(255,253,248,.88);
   border:1px solid var(--line);
-  border-radius:999px;
-}
-
-.hero-photo,
-.family-photo{
-  position:relative;
-  padding:14px;
-  background:rgba(255,250,242,.68);
-  border:1px solid var(--line);
-  border-radius:42px;
+  border-radius:18px 46px 46px 18px;
   box-shadow:var(--shadow);
+  padding:34px;
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:36px;
+  align-items:center;
+  position:relative;
 }
 
-.hero-photo img,
-.family-photo img{
-  width:100%;
-  object-fit:cover;
-  display:block;
-  border-radius:30px;
-  cursor:pointer;
+.hero-book::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:28px;
+  bottom:28px;
+  width:1px;
+  background:linear-gradient(transparent,var(--line),transparent);
+}
+
+.hero-photo{
+  background:#fff;
+  padding:14px 14px 42px;
+  border:1px solid var(--line);
+  box-shadow:0 12px 30px rgba(80,63,48,.1);
+  transform:rotate(-2deg);
 }
 
 .hero-photo img{
-  aspect-ratio:1.12/1;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  filter:saturate(.92) contrast(.96);
 }
 
-/* SECTION */
-.section{
-  padding:110px 24px;
+.hero-copy{
+  padding:22px;
 }
 
-.section-inner{
-  max-width:var(--container);
-  margin:auto;
+.kicker{
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:13px;
+  letter-spacing:.22em;
+  color:var(--muted);
+  margin-bottom:28px;
 }
 
-.section-head{
+.hero h1{
+  font-size:clamp(56px,9vw,118px);
+  font-weight:400;
+  line-height:1;
+  letter-spacing:.16em;
+  margin-left:.16em;
+  margin-bottom:24px;
+}
+
+.hero h2{
+  font-size:24px;
+  font-weight:400;
+  margin-bottom:24px;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:2.15;
+}
+
+.date{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 20px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  font-family:'Noto Sans TC',sans-serif;
+  color:#7a6a5e;
+}
+
+/* 標題 */
+.section-title{
   text-align:center;
-  margin-bottom:66px;
+  margin-bottom:52px;
 }
 
-.section-head .en{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:22px;
+.section-title .small{
+  font-family:'Noto Sans TC',sans-serif;
   color:var(--muted);
   letter-spacing:.2em;
-  margin-bottom:18px;
+  font-size:13px;
+  margin-bottom:12px;
 }
 
-.section-head h2{
+.section-title h2{
   font-size:34px;
   font-weight:400;
-  letter-spacing:.28em;
-  margin-left:.28em;
+  letter-spacing:.12em;
+  margin-left:.12em;
 }
 
-/* ALBUM */
+.section-title p{
+  margin-top:16px;
+  color:var(--muted);
+  line-height:1.9;
+}
+
+/* 小故事 */
+.story-card{
+  background:rgba(255,253,248,.86);
+  border:1px solid var(--line);
+  border-radius:36px;
+  padding:40px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:38px;
+  align-items:center;
+}
+
+.story-img{
+  background:#fff;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  transform:rotate(1.8deg);
+}
+
+.story-img img{
+  border-radius:18px;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+
+.story-text h3{
+  font-size:30px;
+  font-weight:400;
+  margin-bottom:22px;
+}
+
+.story-text p{
+  color:#6c5f55;
+  font-size:17px;
+  line-height:2.2;
+}
+
+/* 章節卡 */
+.chapters{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:28px;
+}
+
+.chapter{
+  padding:26px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:rgba(255,255,255,.56);
+}
+
+.chapter:nth-child(1){background:rgba(243,200,189,.28);}
+.chapter:nth-child(2){background:rgba(201,220,235,.32);}
+.chapter:nth-child(3){background:rgba(245,223,159,.28);}
+
+.chapter .no{
+  font-family:'Noto Sans TC',sans-serif;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+.chapter h3{
+  font-size:22px;
+  font-weight:400;
+  margin-bottom:12px;
+}
+
+.chapter p{
+  color:var(--muted);
+  line-height:1.9;
+}
+
+/* 相簿 */
 .album{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
 
 .photo{
-  position:relative;
-  background:var(--cream);
+  background:#fffdf8;
   border:1px solid var(--line);
-  border-radius:30px;
+  border-radius:26px;
   padding:12px;
-  box-shadow:0 18px 48px rgba(94,74,54,.08);
+  box-shadow:0 14px 34px rgba(80,63,48,.1);
+  transition:.35s ease;
   cursor:pointer;
-  overflow:hidden;
-  transition:.45s ease;
+}
+
+.photo:nth-child(odd){
+  transform:rotate(-1.2deg);
+}
+
+.photo:nth-child(even){
+  transform:rotate(1.2deg);
 }
 
 .photo:hover{
-  transform:translateY(-8px);
-  box-shadow:0 28px 66px rgba(94,74,54,.15);
+  transform:translateY(-8px) rotate(0deg);
 }
 
 .photo .frame{
   overflow:hidden;
-  border-radius:22px;
+  border-radius:18px;
   aspect-ratio:1/1;
+  background:#eee3d8;
 }
 
 .photo img{
-  width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
-  transition:.75s ease;
+  filter:saturate(.94) contrast(.97);
+  transition:.6s ease;
 }
 
 .photo:hover img{
-  transform:scale(1.055);
+  transform:scale(1.04);
 }
 
 .photo figcaption{
-  padding:14px 4px 4px;
-  color:var(--muted);
-  font-size:13px;
-  letter-spacing:.14em;
-}
-
-/* FAMILY LETTER */
-.family-letter{
-  display:grid;
-  grid-template-columns:1.28fr .92fr;
-  gap:46px;
-  align-items:center;
-  background:rgba(255,250,242,.72);
-  border:1px solid var(--line);
-  border-radius:46px;
-  padding:42px;
-  box-shadow:var(--shadow);
-}
-
-.family-photo{
-  padding:12px;
-}
-
-.family-photo img{
-  height:auto;
-  object-fit:contain;
-  border-radius:28px;
-}
-
-.family-letter-content{
-  text-align:left;
-  padding:20px 10px;
-}
-
-.family-letter-content .en{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  color:var(--muted);
-  font-size:24px;
-  margin-bottom:18px;
-}
-
-.family-letter-content h3{
-  font-size:30px;
-  font-weight:400;
-  letter-spacing:.18em;
-  margin-bottom:28px;
-}
-
-.parents{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:30px;
-}
-
-.parents span{
-  padding:10px 16px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  color:var(--deep);
-  background:rgba(255,255,255,.42);
+  padding:14px 6px 4px;
+  color:#6f6258;
   font-size:14px;
-  letter-spacing:.12em;
+  line-height:1.7;
 }
 
-.family-letter-content p{
+.photo figcaption span{
+  display:block;
+  color:var(--muted);
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:12px;
+  letter-spacing:.14em;
+  margin-bottom:3px;
+}
+
+/* 信 */
+.letter{
+  background:rgba(255,253,248,.9);
+  border:1px solid var(--line);
+  border-radius:42px;
+  box-shadow:var(--shadow);
+  padding:44px;
+  position:relative;
+}
+
+.letter::before{
+  content:"“";
+  position:absolute;
+  top:8px;
+  left:28px;
+  font-size:130px;
+  color:rgba(216,203,187,.45);
+  line-height:1;
+}
+
+.letter-inner{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:40px;
+  align-items:center;
+}
+
+.letter h2{
+  font-size:34px;
+  font-weight:400;
+  margin-bottom:24px;
+}
+
+.letter p{
   font-size:17px;
+  color:#6c5f55;
   line-height:2.25;
-  letter-spacing:.06em;
-  color:#5e544d;
-  text-align:justify;
 }
 
 .sign{
-  margin-top:34px;
-  text-align:right;
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  color:var(--muted);
-  letter-spacing:.14em;
+  margin-top:28px;
+  color:#9a8277;
+  font-family:'Noto Sans TC',sans-serif;
 }
 
-/* FOOTER */
+.family-photo{
+  background:#fff;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  transform:rotate(2deg);
+}
+
+.family-photo img{
+  border-radius:20px;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+
+/* footer */
 footer{
-  max-width:var(--container);
-  margin:auto;
-  padding:70px 24px;
   text-align:center;
+  padding:56px 20px 76px;
   color:var(--muted);
-  letter-spacing:.22em;
 }
 
 footer strong{
   display:block;
-  color:var(--ink);
+  font-size:24px;
   font-weight:400;
-  font-size:20px;
-  margin-bottom:14px;
+  color:var(--ink);
+  margin-bottom:10px;
 }
 
-/* LIGHTBOX */
+/* Lightbox */
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(48,40,34,.78);
+  background:rgba(40,34,29,.82);
   display:none;
   align-items:center;
   justify-content:center;
@@ -324,25 +438,26 @@ footer strong{
   padding:24px;
 }
 
-.lightbox.show{display:flex;}
+.lightbox.show{
+  display:flex;
+}
 
 .lightbox img{
   max-width:92vw;
   max-height:86vh;
   object-fit:contain;
-  border-radius:28px;
+  border-radius:22px;
   box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
 .lb-btn{
   position:absolute;
-  color:white;
-  background:rgba(255,255,255,.1);
-  border:1px solid rgba(255,255,255,.3);
-  backdrop-filter:blur(6px);
+  color:#fff;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.35);
   cursor:pointer;
   border-radius:50%;
-  font-family:Arial,sans-serif;
+  backdrop-filter:blur(6px);
 }
 
 .close{
@@ -350,106 +465,84 @@ footer strong{
   right:28px;
   width:48px;
   height:48px;
-  font-size:34px;
+  font-size:32px;
 }
 
-.prev,.next{
+.prev,
+.next{
   top:50%;
   transform:translateY(-50%);
-  width:52px;
-  height:52px;
-  font-size:30px;
+  width:54px;
+  height:54px;
+  font-size:34px;
 }
 
 .prev{left:28px;}
 .next{right:28px;}
 
-/* RESPONSIVE */
-@media(max-width:980px){
-  .hero{
+/* RWD */
+@media(max-width:900px){
+  .hero-book,
+  .story-card,
+  .letter-inner{
     grid-template-columns:1fr;
-    padding:42px 24px 84px;
-    gap:44px;
   }
 
-  .hero-photo{order:1;}
-  .hero-copy{order:2;}
+  .hero-book::before{
+    display:none;
+  }
 
-  .hero h1{
-    font-size:76px;
+  .chapters{
+    grid-template-columns:1fr;
   }
 
   .album{
     grid-template-columns:repeat(2,1fr);
-    gap:16px;
-  }
-
-  .family-letter{
-    grid-template-columns:1fr;
-    padding:32px 24px;
-  }
-
-  .family-letter-content{
-    padding:10px 6px;
   }
 }
 
 @media(max-width:560px){
-  .section{
-    padding:86px 18px;
+  section{
+    padding:74px 18px;
   }
 
   .hero{
-    padding:42px 18px 84px;
+    padding:46px 18px;
   }
 
-  .hero-photo,
-  .family-photo{
-    border-radius:32px;
-    padding:10px;
+  .hero-book{
+    padding:18px;
+    border-radius:30px;
   }
 
-  .hero-photo img,
-  .family-photo img{
-    border-radius:24px;
+  .hero-copy{
+    padding:14px 4px;
   }
 
   .hero h1{
-    font-size:66px;
-    letter-spacing:.14em;
+    font-size:58px;
   }
 
-  .hero-info{
-    gap:10px;
+  .hero h2{
+    font-size:20px;
   }
 
-  .hero-info span{
-    font-size:12px;
-    padding:10px 14px;
+  .story-card,
+  .letter{
+    padding:22px;
+    border-radius:30px;
   }
 
   .album{
     grid-template-columns:1fr;
   }
 
-  .family-letter{
-    padding:22px 16px;
-    border-radius:34px;
-  }
-
-  .family-letter-content h3{
-    font-size:26px;
-  }
-
-  .family-letter-content p{
-    text-align:left;
-  }
-
-  .section-head h2{
+  .section-title h2{
     font-size:28px;
   }
 
-  .prev,.next{
+  .prev,
+  .next{
     top:auto;
     bottom:24px;
   }
@@ -459,81 +552,189 @@ footer strong{
 
 <body>
 
+<div class="doodle d1">☁</div>
+<div class="doodle d2">♡</div>
+<div class="doodle d3">✦</div>
+<div class="doodle d4">○</div>
+
 <section class="hero">
-  <div class="hero-copy reveal">
-    <div class="kicker">FULL MOON · 彌月紀念</div>
-    <div class="en">a little girl, a whole new world</div>
-    <h1>宇莃</h1>
+  <div class="hero-book reveal">
 
-    <div class="hero-info">
-      <span>滿月之喜</span>
-      <span>2026 · 04 · 24</span>
+    <div class="hero-photo" data-index="0">
+      <img src="images/hero.jpg" alt="陳宇莃彌月照片">
     </div>
-  </div>
 
-  <div class="hero-photo reveal" data-index="0">
-    <img src="images/hero.jpg" alt="陳宇莃彌月照片">
+    <div class="hero-copy">
+      <div class="kicker">A LITTLE STORY ABOUT YU-XI</div>
+      <h1>宇莃</h1>
+      <h2>有一天，我們遇見了一個小小的人</h2>
+      <p>
+        她還不會說話，<br>
+        卻讓整個家變得很安靜、很溫柔，<br>
+        也很快樂。
+      </p>
+
+      <div class="date">彌月紀念｜2026 · 04 · 24</div>
+    </div>
+
   </div>
 </section>
 
-<section class="section">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="en">Precious Moments</div>
-      <h2>宇莃寫真集</h2>
+<section>
+  <div class="wrap">
+    <div class="section-title reveal">
+      <div class="small">CHAPTER ONE</div>
+      <h2>宇莃來了</h2>
+      <p>這不是一本很長的故事，卻是爸爸媽媽最想慢慢讀完的一本書。</p>
+    </div>
+
+    <div class="story-card reveal">
+      <div class="story-img">
+        <img src="images/photo01.jpg" alt="陳宇莃出生照片">
+      </div>
+
+      <div class="story-text">
+        <h3>從妳來的那一天開始</h3>
+        <p>
+          2026年4月24日，宇莃來到了我們身邊。<br><br>
+          世界沒有突然變得很大聲，反而變得很輕。  
+          像窗邊慢慢飄進來的光，像剛洗好的小被子，
+          像一個讓人不敢太用力呼吸的夢。<br><br>
+          原來幸福，有時候很小。  
+          小到只是一雙手、一個表情、一聲輕輕的呼吸。
+        </p>
+      </div>
+    </div>
+
+    <div class="chapters reveal">
+      <div class="chapter">
+        <div class="no">01</div>
+        <h3>她的日常</h3>
+        <p>喝奶、睡覺、發呆，偶爾用一個表情讓全家融化。</p>
+      </div>
+
+      <div class="chapter">
+        <div class="no">02</div>
+        <h3>她的魔法</h3>
+        <p>明明什麼都還沒做，大家卻已經願意把全世界給她。</p>
+      </div>
+
+      <div class="chapter">
+        <div class="no">03</div>
+        <h3>她的未來</h3>
+        <p>希望她慢慢長大，健康、平安，也永遠被溫柔對待。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-title reveal">
+      <div class="small">PHOTO NOTEBOOK</div>
+      <h2>宇莃的小小畫冊</h2>
+      <p>每一張照片，都像一頁安靜又可愛的故事。</p>
     </div>
 
     <div class="album">
-      <figure class="photo reveal" data-index="1"><div class="frame"><img src="images/photo01.jpg" alt=""></div><figcaption>N° 01 爸爸媽媽等了好久，終於見面啦</figcaption></figure>
-      <figure class="photo reveal" data-index="2"><div class="frame"><img src="images/photo02.jpg" alt=""></div><figcaption>N° 02 奶喝飽了，人生就很美好</figcaption></figure>
-      <figure class="photo reveal" data-index="3"><div class="frame"><img src="images/photo03.jpg" alt=""></div><figcaption>N° 03 聽說我笑起來，全家都投降</figcaption></figure>
-      <figure class="photo reveal" data-index="4"><div class="frame"><img src="images/photo04.jpg" alt=""></div><figcaption>N° 04 不知不覺，我已經滿月了呢</figcaption></figure>
-      <figure class="photo reveal" data-index="5"><div class="frame"><img src="images/photo05.jpg" alt=""></div><figcaption>N° 05 被愛包圍的感覺，原來是這樣</figcaption></figure>
-      <figure class="photo reveal" data-index="6"><div class="frame"><img src="images/photo06.jpg" alt=""></div><figcaption>N° 06 今天也努力當個可愛的小寶寶</figcaption></figure>
-      <figure class="photo reveal" data-index="7"><div class="frame"><img src="images/photo07.jpg" alt=""></div><figcaption>N° 07 在夢裡，我也想念你們</figcaption></figure>
-      <figure class="photo reveal" data-index="8"><div class="frame"><img src="images/photo08.jpg" alt=""></div><figcaption>N° 08 慢慢長大，慢慢認識這個世界</figcaption></figure>
-      <figure class="photo reveal" data-index="9"><div class="frame"><img src="images/photo09.jpg" alt=""></div><figcaption>N° 09 每一天都有新的驚喜等著我</figcaption></figure>
-      <figure class="photo reveal" data-index="10"><div class="frame"><img src="images/photo10.jpg" alt=""></div><figcaption>N° 10 小手牽大手，一起去冒險吧</figcaption></figure>
-      <figure class="photo reveal" data-index="11"><div class="frame"><img src="images/photo11.jpg" alt=""></div><figcaption>N° 11 有爸爸媽媽的地方，就是家</figcaption></figure>
-      <figure class="photo reveal" data-index="12"><div class="frame"><img src="images/photo12.jpg" alt=""></div><figcaption>N° 12 謝謝你們愛我，我也愛你們</figcaption></figure>
+
+      <figure class="photo reveal" data-index="1">
+        <div class="frame"><img src="images/photo01.jpg" alt=""></div>
+        <figcaption><span>PAGE 01</span>剛來到世界，還在適應大家的熱情</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="2">
+        <div class="frame"><img src="images/photo02.jpg" alt=""></div>
+        <figcaption><span>PAGE 02</span>睡覺是一件很認真的事情</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="3">
+        <div class="frame"><img src="images/photo03.jpg" alt=""></div>
+        <figcaption><span>PAGE 03</span>我只是笑一下，你們怎麼都融化了</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="4">
+        <div class="frame"><img src="images/photo04.jpg" alt=""></div>
+        <figcaption><span>PAGE 04</span>滿月了，我的人生第一章完成</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="5">
+        <div class="frame"><img src="images/photo05.jpg" alt=""></div>
+        <figcaption><span>PAGE 05</span>有很多愛圍著我轉，我有感覺到</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="6">
+        <div class="frame"><img src="images/photo06.jpg" alt=""></div>
+        <figcaption><span>PAGE 06</span>今天也努力當一個可愛的小朋友</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="7">
+        <div class="frame"><img src="images/photo07.jpg" alt=""></div>
+        <figcaption><span>PAGE 07</span>夢裡的世界，可能也很溫柔</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="8">
+        <div class="frame"><img src="images/photo08.jpg" alt=""></div>
+        <figcaption><span>PAGE 08</span>我正在偷偷長大，請不要眨眼</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="9">
+        <div class="frame"><img src="images/photo09.jpg" alt=""></div>
+        <figcaption><span>PAGE 09</span>每天都一點點，認識這個世界</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="10">
+        <div class="frame"><img src="images/photo10.jpg" alt=""></div>
+        <figcaption><span>PAGE 10</span>這雙小手，以後會牽著你們走很久</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="11">
+        <div class="frame"><img src="images/photo11.jpg" alt=""></div>
+        <figcaption><span>PAGE 11</span>原來家，就是有人一直看著我笑</figcaption>
+      </figure>
+
+      <figure class="photo reveal" data-index="12">
+        <div class="frame"><img src="images/photo12.jpg" alt=""></div>
+        <figcaption><span>PAGE 12</span>謝謝你們，把祝福放進我的故事裡</figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-inner">
-    <div class="family-letter reveal">
+<section>
+  <div class="wrap">
+    <div class="letter reveal">
+      <div class="letter-inner">
 
-      <div class="family-photo" data-index="13">
-        <img src="images/family.jpg" alt="陳宇莃全家福">
-      </div>
+        <div>
+          <h2>給宇莃的一封信</h2>
+          <p>
+            親愛的宇莃：<br><br>
+            妳來到我們身邊以後，時間變得很奇妙。  
+            有時候一天很長，長到爸爸媽媽想多睡一點；  
+            有時候一天又很短，短到我們來不及記住妳每一個表情。<br><br>
+            但我們會慢慢陪妳。  
+            陪妳學會翻身、學會走路、學會說話，也陪妳認識這個世界。<br><br>
+            願妳永遠知道，妳不是一個人。  
+            在妳的故事裡，爸爸媽媽會一直在。
+          </p>
 
-      <div class="family-letter-content">
-        <div class="en">With Love From Mom & Dad</div>
-        <h3>爸爸媽媽的祝福</h3>
-
-        <div class="parents">
-          <span>爸爸｜陳功盛</span>
-          <span>媽媽｜許茹茵</span>
+          <div class="sign">— 愛妳的爸爸媽媽</div>
         </div>
 
-        <p>
-          大家好，我是陳宇莃。<br><br>
-          2026年4月24日，我帶著爸爸媽媽的期待與滿滿的愛，來到了這個世界。雖然我還不太會說話，但我已經感受到每一份溫柔的陪伴與祝福。<br><br>
-          親愛的宇莃，謝謝妳來到我們的生命裡，讓每一個平凡的日子都變得溫柔而珍貴。願妳在滿滿的愛裡，健康、平安、快樂地長大。未來無論走到哪裡，都能勇敢、善良，也永遠記得，爸爸媽媽會一直在妳身邊陪伴妳。<br><br>
-          謝謝大家陪我一起迎接人生的第一個月，也謝謝每一位家人與朋友給予我們滿滿的愛與祝福。
-        </p>
+        <div class="family-photo" data-index="13">
+          <img src="images/family.jpg" alt="陳宇莃全家福">
+        </div>
 
-        <div class="sign">— 爸爸 陳功盛・媽媽 許茹茵</div>
       </div>
-
     </div>
   </div>
 </section>
 
 <footer>
-  <strong>陳 宇 莃 · 彌 月 紀 念</strong>
-  FULL MOON · 2026
+  <strong>陳宇莃・彌月小故事</strong>
+  謝謝你來看她的第一本小畫冊
 </footer>
 
 <div class="lightbox" id="lightbox">
@@ -545,6 +746,7 @@ footer strong{
 
 <script>
 const reveals = document.querySelectorAll('.reveal');
+
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -552,7 +754,8 @@ const observer = new IntersectionObserver(entries=>{
       observer.unobserve(entry.target);
     }
   });
-},{threshold:.15});
+},{threshold:.12});
+
 reveals.forEach(el=>observer.observe(el));
 
 const photos = [
