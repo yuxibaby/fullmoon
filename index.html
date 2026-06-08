@@ -129,16 +129,18 @@ section{
 
 .hero-photo{
   background:#fff;
-  padding:14px 14px 42px;
+  padding:14px;
   border:1px solid var(--line);
   box-shadow:0 12px 30px rgba(80,63,48,.1);
   transform:rotate(-2deg);
+  max-width:700px;
+  margin:auto;
 }
 
 .hero-photo img{
-  aspect-ratio:4/5;
-  object-fit:cover;
-  filter:saturate(.92) contrast(.96);
+   width:100%;
+  height:auto;
+  object-fit:contain;
 }
 
 .hero-copy{
